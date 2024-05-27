@@ -8,7 +8,9 @@ import hello.core.member.MemberServiceImpl;
 // 순수 자바 코드에 자바 메서드 실행
 public class MemberApp {
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
+
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
         Member member = new Member(1L, "mamberA", Grade.VIP);
         memberService.join(member);
 
